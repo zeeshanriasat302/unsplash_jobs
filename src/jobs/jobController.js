@@ -7,6 +7,7 @@ const prisma = new PrismaClient();
 const jobQueue = [];
 
 const processJobs = async () => {
+  console.log("checking ---->")
   if (jobQueue.length > 0) {
     const job = jobQueue.shift();
     try {
@@ -37,6 +38,7 @@ const processJobs = async () => {
 };
 
 const startProcessingJobs = () => {
+
   setInterval(processJobs, 10000);
 };
 
