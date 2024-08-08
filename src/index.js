@@ -13,6 +13,10 @@ const PORT = 3000;
 app.use(cors())
 app.use(express.json());
 app.use('/api', jobRoutes);
+app.get('/', (req, res) => {
+  res.status(200).json({message: "Hello World!"});
+});
+
 
 jobController.startProcessingJobs();
 
